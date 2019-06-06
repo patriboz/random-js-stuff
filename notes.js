@@ -1,4 +1,4 @@
-/*
+
 function fibonacci(range) {
     var r = [], n = 0, a = 0, b = 1, next;
     function nextFibonacci() {
@@ -46,7 +46,7 @@ var t = 0;
 var a = (t === 0 ? 1 : 2);
 console.log(a);
 
-*/
+
 
 var obj = {};
 obj.a = 1,
