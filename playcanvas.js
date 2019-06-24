@@ -1,13 +1,13 @@
 // PlayCanvas Notes - Patrick Bozic, CGAII
 
 // 1. Communication: Script A initiates communication to have Script B do something
-
-
+// If both scripts have the same entity, they are accessible via this.entity.script.scriptname to each other
+// While attached to different entities, use:
 
 // Script A Event
 this.app.fire('name:eventName');
 
-// Script B Event Listener
+// Script B Event Listener with method call
 this.app.on('name:eventName', this.doSomething);
 ObjectName.prototype.doSomething = function(){ };
 

@@ -1,3 +1,5 @@
+// Random js notes
+
 
 function fibonacci(range) {
     var r = [], n = 0, a = 0, b = 1, next;
@@ -44,25 +46,50 @@ function renderCurve() {
 var t = 0;
 
 var a = (t === 0 ? 1 : 2);
-console.log(a);
+//console.log(a);
 
 
-
+// Comma operator
 var obj = {};
 obj.a = 1,
 obj.b = 2,
 obj.c = 3
-console.log(obj)
-console.log(obj.a, obj.b, obj.c, 'this', 'is', 'filthy')
+//console.log(obj)
+//console.log(obj.a, obj.b, obj.c, 'this', 'is', 'filthy')
 
 var pat = 1,
     tap = 2,
     atp = 3,
     apt = 4
 
-console.log(pat, tap, atp, apt)
+//console.log(pat, tap, atp, apt)
 
 function diff(x, y) {
     return x, (x/y)
 }
-console.log(diff(4,2));
+//console.log(diff(4,2));
+
+
+// Create & delete event listeners systematically
+element.querySelector('.addDoor').onEvent('click', function (e) { });
+element.querySelector('.addDoor').removeListeners();
+
+
+HTMLElement.prototype.onEvent = function (eventType, callBack, useCapture) {
+this.addEventListener(eventType, callBack, useCapture);
+if (!this.myListeners) {
+    this.myListeners = [];
+};
+this.myListeners.push({ eType: eventType, callBack: callBack });
+return this;
+};
+
+
+HTMLElement.prototype.removeListeners = function () {
+if (this.myListeners) {
+    for (var i = 0; i < this.myListeners.length; i++) {
+        this.removeEventListener(this.myListeners[i].eType, this.myListeners[i].callBack);
+    };
+   delete this.myListeners;
+};
+};
